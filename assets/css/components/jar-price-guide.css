@@ -3,8 +3,43 @@
 
 .jar-guide{background:var(--white)}
 
+/* Jars we have poured — a shelf, not a grid.
+   A full-width grid of large tiles outweighed the price table it introduces,
+   and grew a second row as photos were added. A single scrolling row keeps the
+   weight constant however many there are, and the cut-off tile at the right
+   edge is what tells you to swipe. */
+.jar-gallery{
+  display:flex;gap:12px;margin:34px 0 0;padding:0 0 8px;list-style:none;
+  overflow-x:auto;scroll-snap-type:x proximity;
+  scrollbar-width:thin;scrollbar-color:var(--line) transparent
+}
+.jar-gallery li{
+  flex:0 0 clamp(148px,16vw,196px);background:#eee1d5;overflow:hidden;
+  scroll-snap-align:start
+}
+.jar-gallery img{width:100%;aspect-ratio:1/1;object-fit:cover;object-position:50% 50%;transition:.5s}
+
+/* The crop shifts along the row so each tile frames a different part of the
+   photograph. With real, separate photos this simply varies the framing; today
+   it stops one repeated placeholder from reading as a rendering fault.
+   Safe to delete once every tile has its own image. */
+.jar-gallery li:nth-child(4n+1) img{object-position:22% 55%}
+.jar-gallery li:nth-child(4n+2) img{object-position:62% 45%}
+.jar-gallery li:nth-child(4n+3) img{object-position:40% 62%}
+.jar-gallery li:nth-child(4n+4) img{object-position:78% 55%}
+.jar-gallery li:hover img{transform:scale(1.05)}
+
+.jar-gallery::-webkit-scrollbar{height:6px}
+.jar-gallery::-webkit-scrollbar-thumb{background:var(--line)}
+.jar-gallery::-webkit-scrollbar-track{background:transparent}
+
+.jar-gallery-label{
+  margin:34px 0 0;font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--muted)
+}
+.jar-gallery-label + .jar-gallery{margin-top:14px}
+
 .jar-table{
-  width:100%;border-collapse:collapse;margin-top:40px;
+  width:100%;border-collapse:collapse;margin-top:44px;
   font-variant-numeric:lining-nums tabular-nums
 }
 .jar-table th,.jar-table td{border-bottom:1px solid var(--line);text-align:left}
@@ -47,6 +82,7 @@
 }
 
 @media(max-width:800px){
+  .jar-gallery li{flex:0 0 56%}
   .jar-notes{grid-template-columns:1fr;gap:30px}
   .jar-table tbody th{font-size:17px;padding:10px 6px}
   .jar-table td{padding:6px 4px}

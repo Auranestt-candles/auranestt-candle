@@ -33,8 +33,6 @@ export const customizeSteps = [
       { name: 'Soy wax', detail: 'Natural, clean burn and long lasting.' },
       { name: 'Gel wax', detail: 'Crystal clear, with beautiful bubbles.' },
       { name: 'Coconut wax', detail: 'Eco friendly, with excellent scent throw.' },
-      { name: 'Beeswax', detail: '100% natural, with a subtle honey aroma.' },
-      { name: 'Soy blend', detail: 'A blend for better performance and fragrance.' },
     ],
   },
   {

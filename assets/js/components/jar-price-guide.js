@@ -1,9 +1,11 @@
 import {
   decorativeContainers,
   jarContainers,
+  jarGallery,
   jarSizes,
   priceFactors,
 } from '../data/jar-candles.js';
+import { PRODUCT_IMAGE_PATH } from '../config.js';
 import { escapeHtml, qs, render } from '../lib/dom.js';
 import { formatPrice } from '../lib/format.js';
 import { openWhatsapp, orderMessage } from '../lib/whatsapp.js';
@@ -73,7 +75,22 @@ function asideTemplate() {
     </div>`;
 }
 
+/** Jars we have already poured — the table's container names, made concrete. */
+function galleryTemplate() {
+  return jarGallery
+    .map(
+      item => `
+      <li>
+        <img src="${PRODUCT_IMAGE_PATH}/${escapeHtml(item.image)}" alt="${escapeHtml(item.alt)}" loading="lazy">
+      </li>`,
+    )
+    .join('');
+}
+
 export function initJarPriceGuide() {
+  const gallery = qs('[data-jar-gallery]');
+  if (gallery) render(gallery, galleryTemplate());
+
   const root = qs('[data-jar-price-guide]');
   if (!root) return;
 

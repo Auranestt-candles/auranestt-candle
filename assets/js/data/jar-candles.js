@@ -15,6 +15,29 @@
  * @property {number[]} prices One price per entry in `jarSizes`, same order.
  */
 
+/**
+ * Photographs of jars we have poured, shown above the price table.
+ *
+ * TODO: every entry currently points at the one jar photo we have. Drop the
+ * real shots into `assets/images/products/jar-candles/` and update `image` and
+ * `alt` — the alt text should say which container it is, since that is what a
+ * shopper is trying to match against the table below.
+ *
+ * @type {{image: string, alt: string}[]}
+ */
+export const jarGallery = [
+  { image: 'jar-candles/clear-glass.jpg', alt: 'Aura Nestt jar candle' },
+  { image: 'jar-candles/clear-glass.jpg', alt: 'Aura Nestt jar candle' },
+  { image: 'jar-candles/clear-glass.jpg', alt: 'Aura Nestt jar candle' },
+  { image: 'jar-candles/clear-glass.jpg', alt: 'Aura Nestt jar candle' },
+  { image: 'jar-candles/clear-glass.jpg', alt: 'Aura Nestt jar candle' },
+  { image: 'jar-candles/clear-glass.jpg', alt: 'Aura Nestt jar candle' },
+  { image: 'jar-candles/clear-glass.jpg', alt: 'Aura Nestt jar candle' },
+  { image: 'jar-candles/clear-glass.jpg', alt: 'Aura Nestt jar candle' },
+  { image: 'jar-candles/clear-glass.jpg', alt: 'Aura Nestt jar candle' },
+  { image: 'jar-candles/clear-glass.jpg', alt: 'Aura Nestt jar candle' },
+];
+
 /** @type {JarSize[]} */
 export const jarSizes = [
   { code: 'S', label: 'Small', weight: 'approx 100–120 g' },
