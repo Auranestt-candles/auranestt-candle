@@ -46,7 +46,8 @@ function handleSelectionChange(grid) {
 function handleOrderClick(grid) {
   grid.addEventListener('click', event => {
     const button = /** @type {Element} */ (event.target).closest('.order-btn');
-    if (!button) return;
+    // An anchor CTA points at a section on the page; let it navigate.
+    if (!button || button.tagName === 'A') return;
 
     const card = cardOf(button);
     const product = productFor(card.dataset.productId);

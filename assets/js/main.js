@@ -5,12 +5,16 @@
  * Each init function is independent and no-ops when its markup hook is missing.
  */
 import { initCollectionFilter } from './components/collection-filter.js';
+import { initCustomizeSteps } from './components/customize-steps.js';
 import { initCurrentYear } from './components/current-year.js';
+import { initJarPriceGuide } from './components/jar-price-guide.js';
 import { initProductGrid } from './components/product-grid.js';
 import { initSiteNav } from './components/site-nav.js';
 import { initWhatsappLinks } from './components/whatsapp-links.js';
 
 initSiteNav();
 initCollectionFilter(initProductGrid());
+initCustomizeSteps();
+initJarPriceGuide();
 initWhatsappLinks();
 initCurrentYear();

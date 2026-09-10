@@ -39,6 +39,9 @@ function packTemplate(product, pack, isDefault) {
  * @returns {string}
  */
 function packPickerTemplate(product) {
+  // Jar candles are priced by container, not by pack — they carry no packs.
+  if (product.packs.length < 2) return '';
+
   const [defaultPack] = product.packs;
   return `
     <fieldset class="pack-picker">
@@ -97,6 +100,15 @@ function colourPickerTemplate(product) {
  */
 export function productCardTemplate(product) {
   const [defaultPack] = product.packs;
+  const price = product.priceLabel || formatPrice(defaultPack.price);
+
+  // A product whose price depends on choices we cannot make in a card links to
+  // the section that explains it, instead of opening WhatsApp blind.
+  const { cta, href } = product.order;
+  const action = href
+    ? `<a class="order-btn" href="${escapeHtml(href)}">${escapeHtml(cta)} ↗</a>`
+    : `<button class="order-btn" type="button">${escapeHtml(cta)} ↗</button>`;
+
   return `
     <article class="product-card" data-product-id="${escapeHtml(product.id)}">
       <div class="product-image">
@@ -104,13 +116,13 @@ export function productCardTemplate(product) {
       </div>
       <div class="product-meta">
         <span>${escapeHtml(product.collection)}</span>
-        <b data-price>${escapeHtml(formatPrice(defaultPack.price))}</b>
+        <b data-price>${escapeHtml(price)}</b>
       </div>
       <h3>${escapeHtml(product.name)}</h3>
       <p>${escapeHtml(product.description)}</p>
       ${packPickerTemplate(product)}
       ${colourPickerTemplate(product)}
-      <button class="order-btn" type="button">${escapeHtml(product.order.cta)} ↗</button>
+      ${action}
     </article>`;
 }
 

@@ -1,0 +1,61 @@
+/* Jar candle price guide — the printed price table, made orderable.
+   Every price is a button: tapping one opens WhatsApp for that jar and size. */
+
+.jar-guide{background:var(--white)}
+
+.jar-table{
+  width:100%;border-collapse:collapse;margin-top:40px;
+  font-variant-numeric:lining-nums tabular-nums
+}
+.jar-table th,.jar-table td{border-bottom:1px solid var(--line);text-align:left}
+
+.jar-table thead th{
+  padding:0 10px 12px;font-size:11px;letter-spacing:.14em;text-transform:uppercase;
+  color:var(--muted);font-weight:700;vertical-align:bottom
+}
+.jar-table thead th b{display:block;font:600 20px/1 var(--serif);color:var(--wine);letter-spacing:0}
+.jar-table thead th span{display:block;margin-top:4px;font-size:10px;letter-spacing:.04em;text-transform:none;font-weight:400}
+
+.jar-table tbody th{padding:12px 10px;font:600 19px var(--serif);font-weight:600}
+.jar-table tbody tr:hover th{color:var(--wine)}
+.jar-table td{padding:8px 10px}
+
+.jar-price{
+  width:100%;max-width:110px;border:1px solid var(--line);background:var(--paper);
+  padding:9px 12px;color:var(--wine);font:700 15px var(--sans);cursor:pointer;transition:.2s;
+  font-variant-numeric:lining-nums tabular-nums
+}
+.jar-price:hover{background:var(--wine);border-color:var(--wine);color:var(--white)}
+
+.jar-notes{display:grid;grid-template-columns:1fr 1fr;gap:40px;margin-top:45px;align-items:start}
+.jar-decorative{
+  margin:0;padding:20px 22px;background:var(--cream);
+  color:var(--muted);font-size:14px;line-height:1.6
+}
+.jar-decorative b{display:block;margin-bottom:6px;color:var(--ink)}
+
+.jar-factors h3{margin:0 0 16px;font:600 22px var(--serif)}
+.jar-factors div{
+  display:flex;gap:14px;border-top:1px solid var(--line);padding:10px 0;
+  font-size:13px;line-height:1.5
+}
+.jar-factors b{flex:0 0 40%;font-weight:600}
+.jar-factors span{color:var(--muted)}
+
+.jar-footnote{
+  margin:38px 0 0;font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:var(--wine)
+}
+
+@media(max-width:800px){
+  .jar-notes{grid-template-columns:1fr;gap:30px}
+  .jar-table tbody th{font-size:17px;padding:10px 6px}
+  .jar-table td{padding:6px 4px}
+  .jar-price{max-width:none;padding:8px 6px;font-size:13px}
+  .jar-table thead th{padding:0 6px 10px}
+}
+@media(max-width:520px){
+  .jar-table tbody th{font-size:15px}
+  .jar-table thead th b{font-size:17px}
+  .jar-table thead th span{display:none}
+  .jar-factors b{flex-basis:46%}
+}

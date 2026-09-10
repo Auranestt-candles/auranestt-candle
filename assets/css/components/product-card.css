@@ -30,7 +30,7 @@
 .product-card p{font-size:13px;line-height:1.55;color:var(--muted);min-height:80px;margin:0}
 
 .order-btn{
-  border:0;border-top:1px solid var(--line);background:none;width:100%;
+  display:block;border:0;border-top:1px solid var(--line);background:none;width:100%;
   margin-top:auto;padding:12px 0 4px;text-align:left;color:var(--wine);
   font-size:11px;text-transform:uppercase;letter-spacing:.08em;cursor:pointer
 }

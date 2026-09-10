@@ -18,6 +18,8 @@ assets/
     config.js                  WhatsApp number and other owner-editable settings
     data/
       products.js              the candle catalogue (single source of truth)
+      jar-candles.js           jar price guide: containers, sizes, price factors
+      customize.js             the five customisation steps and their options
       navigation.js            nav links and collection filters
     lib/
       dom.js                   qs/qsa/escapeHtml/render helpers
@@ -129,6 +131,27 @@ puts the buyer in a room instead of a conversation.
 ### Update contact details
 
 Search `index.html` for `@auranestt_candle`.
+
+### Jar candle prices
+
+Jar candles are priced by container and size, not by pack, so the card carries
+`packs: []` and a `priceLabel` (`FROM ₹149`), and its CTA links to the
+**#jar-candles** section instead of opening WhatsApp. That section is rendered
+from `assets/js/data/jar-candles.js` — twelve containers × three sizes,
+transcribed from page 12 of the printed catalog. Every price is a button that
+opens WhatsApp with that container and size written out.
+
+Keep the table and the printed guide in step. Any other product can use the
+same escape hatch: give it an empty `packs`, a `priceLabel`, and an
+`order.href`.
+
+### Customisation options
+
+The five steps in **#customize** — container, wax, fragrance, decoration, wick —
+come from `assets/js/data/customize.js`, transcribed from page 13 of the printed
+catalog, along with the occasions strip and the closing "fully customizable"
+tile. An option with a `detail` renders as a described list; one without renders
+as a chip, so a list of twelve containers stays scannable.
 
 ### Ordering, shipping and payment terms
 

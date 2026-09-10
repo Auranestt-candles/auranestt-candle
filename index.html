@@ -126,6 +126,21 @@
       </noscript>
     </section>
 
+    <section class="jar-guide section" id="jar-candles">
+      <div class="section-heading">
+        <div>
+          <div class="section-kicker">JAR CANDLE COLLECTION</div>
+          <h2>Different jars,<br><em>different vibes.</em></h2>
+        </div>
+        <p class="lead">The price follows the container and the size. Tap any price and we’ll get a message with that exact jar — glass, wax and fragrance are yours to choose from there.</p>
+      </div>
+
+      <!-- Table and notes are rendered from assets/js/data/jar-candles.js -->
+      <div data-jar-price-guide></div>
+
+      <p class="jar-footnote">Bulk orders, corporate gifting and return gifts available · Custom packaging on request</p>
+    </section>
+
     <section class="ordering section" id="ordering">
       <div class="section-heading">
         <div>
@@ -170,26 +185,38 @@
     </section>
 
     <section class="customize section" id="customize">
-      <div class="customize-copy">
-        <div class="section-kicker">MADE YOUR WAY</div>
-        <h2>Customize<br><em>your candle.</em></h2>
-        <p class="lead">Weddings, hampers, return gifts or a candle that simply feels like you — tell us what you have in mind and we’ll make it, from the jar right down to the dried petals on top.</p>
-        <div class="steps">
-          <div><span>01</span><b>Choose your container</b><small>Glass, jar, mug or decorative container</small></div>
-          <div><span>02</span><b>Choose your wax</b><small>Soy, gel or coconut wax</small></div>
-          <div><span>03</span><b>Choose your fragrance</b><small>Lavender, rose, vanilla, coffee, jasmine & more</small></div>
-          <div><span>04</span><b>Choose your decorations</b><small>Dried flowers, petals, crystals, glitter & more</small></div>
+      <div class="section-heading">
+        <div>
+          <div class="section-kicker">CUSTOMIZE YOUR CANDLE</div>
+          <h2>Your idea.<br><em>Our craftsmanship.</em></h2>
         </div>
-        <a class="btn btn-dark" href="#contact">Start a custom order <span aria-hidden="true">→</span></a>
+        <p class="lead">Create a candle that is truly yours. Choose the container, the wax, the fragrance, the decorations and the wick — we pour it by hand, just for you.</p>
       </div>
-      <div class="customize-visual">
-        <img src="assets/images/products/jar-candles/clear-glass.jpg" alt="Custom jar candles" loading="lazy">
-        <div class="custom-stamp">YOUR IDEA<br>OUR CRAFT</div>
+
+      <!-- Steps and occasions are rendered from assets/js/data/customize.js -->
+      <div class="customize-steps" data-customize-steps></div>
+
+      <div class="customize-occasions">
+        <h3>Made for</h3>
+        <ul data-occasions></ul>
+      </div>
+
+      <div class="customize-cta">
+        <p>
+          <b>Custom candles start from ₹149.</b>
+          The final price depends on the container type and size, the wax, the fragrance,
+          the decorations and any personalisation.
+        </p>
+        <a class="btn btn-dark" href="#" target="_blank" rel="noopener"
+           data-whatsapp-link
+           data-whatsapp-message="Hi Aura Nestt! I'd like to design a custom candle. Here's what I have in mind:">
+          Start a custom order <span aria-hidden="true">→</span>
+        </a>
       </div>
     </section>
 
     <section class="gifting section" id="gifting">
-      <div class="gifting-image"><img src="assets/images/sections/corporate-gifting.jpg" alt="Aura Nestt corporate and bulk gifting" loading="lazy"></div>
+      <div class="gifting-image"><img src="assets/images/sections/corporate-gifting.png" alt="Aura Nestt corporate and bulk gifting" loading="lazy"></div>
       <div class="gifting-copy">
         <div class="section-kicker">CORPORATE & BULK GIFTING</div>
         <h2>Thoughtful gifts<br>that leave a <em>lasting impression.</em></h2>

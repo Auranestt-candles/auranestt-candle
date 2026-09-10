@@ -26,9 +26,14 @@
  * @property {string} image        Default image, shown before any colour is picked.
  * @property {string} alt
  * @property {PackOption[]} packs      Smallest pack first; it is the default.
+ *                                     Empty when the price depends on choices a
+ *                                     card cannot hold (see `priceLabel`).
+ * @property {string} [priceLabel]     Shown instead of a pack price, e.g. 'FROM ₹149'.
  * @property {ColourOption[]} colours  First entry is the default selection.
- * @property {{cta: string}} order     Button label. The WhatsApp message is built
- *                                     from the name, pack and colour on order.
+ * @property {{cta: string, href?: string}} order  Button label. Without `href` the
+ *                                     button opens WhatsApp with a message built from
+ *                                     the name, pack and colour; with it, the CTA is a
+ *                                     link to that section instead.
  */
 
 /**
@@ -107,7 +112,7 @@ export const products = [
     categories: ['floral', 'pillar', 'gifting'],
     image: 'lotus-bloom/pink.png',
     alt: 'Lotus Bloom candle',
-    packs: [{ size: 2, price: 199 }, { size: 4, price: 329 }],
+    packs: [{ size: 2, price: 209 }, { size: 4, price: 349 }],
     colours: [
       { name: 'Pink', hex: SWATCH.pink, image: 'lotus-bloom/pink.png' },
       { name: 'Red', hex: SWATCH.red, image: 'lotus-bloom/red.png' },
@@ -238,7 +243,7 @@ export const products = [
     categories: ['pillar', 'gifting'],
     image: 'spiral-wave-pillar/red.png',
     alt: 'Spiral Wave Pillar candle',
-    packs: [{ size: 2, price: 299 }, { size: 4, price: 499 }],
+    packs: [{ size: 2, price: 259 }, { size: 3, price: 369 }, { size: 4, price: 479 }],
     colours: [
       { name: 'Red', hex: SWATCH.red, image: 'spiral-wave-pillar/red.png' },
       { name: 'Pink', hex: SWATCH.pink, image: 'spiral-wave-pillar/pink.png' },
@@ -257,10 +262,12 @@ export const products = [
     categories: ['jar', 'gifting'],
     image: 'jar-candles/clear-glass.jpg',
     alt: 'Jar candle collection',
-    packs: [{ size: 1, price: 149 }, { size: 2, price: 290 }, { size: 4, price: 560 }],
+    // Priced by container and size, not by pack — see `data/jar-candles.js`.
+    packs: [],
+    priceLabel: 'FROM ₹149',
     colours: [
       { name: 'Clear Glass', hex: SWATCH.clearGlass, image: 'jar-candles/clear-glass.jpg' },
     ],
-    order: { cta: 'Enquire on WhatsApp' },
+    order: { cta: 'See jars & prices', href: '#jar-candles' },
   },
 ];
