@@ -112,7 +112,7 @@ export function productCardTemplate(product) {
   return `
     <article class="product-card" data-product-id="${escapeHtml(product.id)}">
       <div class="product-image">
-        <img src="${PRODUCT_IMAGE_PATH}/${escapeHtml(product.image)}" alt="${escapeHtml(product.alt)}" loading="lazy">
+        <img src="${PRODUCT_IMAGE_PATH}/${escapeHtml(product.image)}" alt="${escapeHtml(product.alt)}">
       </div>
       <div class="product-meta">
         <span>${escapeHtml(product.collection)}</span>

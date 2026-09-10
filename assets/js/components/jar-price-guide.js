@@ -81,7 +81,7 @@ function galleryTemplate() {
     .map(
       item => `
       <li>
-        <img src="${PRODUCT_IMAGE_PATH}/${escapeHtml(item.image)}" alt="${escapeHtml(item.alt)}" loading="lazy">
+        <img src="${PRODUCT_IMAGE_PATH}/${escapeHtml(item.image)}" alt="${escapeHtml(item.alt)}">
       </li>`,
     )
     .join('');
