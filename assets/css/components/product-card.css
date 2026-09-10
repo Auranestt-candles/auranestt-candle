@@ -15,8 +15,14 @@
   display:flex;justify-content:space-between;align-items:baseline;gap:10px;margin-top:16px;
   font-size:11px;font-weight:500;letter-spacing:.1em;color:var(--wine)
 }
-/* The price carries the decision, so it gets the serif and the size. */
-.product-meta b{font:600 22px/1 var(--serif);letter-spacing:0}
+/* The price carries the decision, so it gets the size.
+   It is set in the sans face on purpose: Cormorant uses old-style figures, so
+   "₹149" comes out with a short 1 and dropped 4 and 9. `tabular-nums` also
+   keeps prices the same width, so they line up down a column of cards. */
+.product-meta b{
+  font:700 21px/1 var(--sans);letter-spacing:.01em;
+  font-variant-numeric:lining-nums tabular-nums
+}
 
 .product-card h3{font:600 28px/1 var(--serif);margin:7px 0}
 /* The copy has to carry the candle, so it is set to read, not to fit.

@@ -24,7 +24,7 @@ export const navLinks = [
 export const productFilters = [
   { value: 'all', label: 'All' },
   { value: 'floral', label: 'Floral' },
-  { value: 'minimal', label: 'Minimal' },
+  { value: 'pillar', label: 'Pillar' },
   { value: 'gifting', label: 'Gifting' },
   { value: 'jar', label: 'Jar candles' },
 ];

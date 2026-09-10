@@ -66,7 +66,7 @@ function swatchTemplate(product, colour, isDefault) {
         data-image="${PRODUCT_IMAGE_PATH}/${escapeHtml(colour.image)}"
         ${isDefault ? 'checked' : ''}
       >
-      <span class="swatch-dot" style="--swatch:${escapeHtml(colour.hex)}"></span>
+      <span class="swatch-dot" style="--swatch:${escapeHtml(colour.swatch || colour.hex)}"></span>
       <span class="sr-only">${name}</span>
     </label>`;
 }
@@ -76,6 +76,9 @@ function swatchTemplate(product, colour, isDefault) {
  * @returns {string}
  */
 function colourPickerTemplate(product) {
+  // A single colour is not a choice — show the picker only when there is one.
+  if (product.colours.length < 2) return '';
+
   const [defaultColour] = product.colours;
   return `
     <fieldset class="colour-picker">

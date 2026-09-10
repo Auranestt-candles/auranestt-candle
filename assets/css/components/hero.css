@@ -11,7 +11,11 @@
 
 .hero-notes{display:flex;gap:28px}
 .hero-notes div{display:flex;gap:10px;align-items:flex-start}
-.hero-notes b{font:500 20px var(--serif);color:var(--wine)}
+/* Sans for the same reason as the price — serif figures read as "oi" here. */
+.hero-notes b{
+  font:700 16px/1.3 var(--sans);letter-spacing:.06em;color:var(--wine);
+  font-variant-numeric:lining-nums tabular-nums
+}
 .hero-notes span{font-size:11px;line-height:1.3;text-transform:uppercase;letter-spacing:.08em;color:var(--muted)}
 
 .hero-visual{position:relative}
