@@ -20,6 +20,7 @@ assets/
       products.js              the candle catalogue (single source of truth)
       jar-candles.js           jar price guide: containers, sizes, price factors
       customize.js             the five customisation steps and their options
+      candle-care.js           care instructions, burn time, what's in a candle
       navigation.js            nav links and collection filters
     lib/
       dom.js                   qs/qsa/escapeHtml/render helpers
@@ -152,6 +153,12 @@ come from `assets/js/data/customize.js`, transcribed from page 13 of the printed
 catalog, along with the occasions strip and the closing "fully customizable"
 tile. An option with a `detail` renders as a described list; one without renders
 as a chip, so a list of twelve containers stays scannable.
+
+### Candle care
+
+**#care** is rendered from `assets/js/data/candle-care.js` (catalog page 14). A
+group is either one instruction (`lead` + `text`) or a list of `bullets` — the
+component picks the shape from the data.
 
 ### Ordering, shipping and payment terms
 

@@ -1,15 +1,51 @@
-/* Candle care guidance. */
+/* Candle care — from catalog page 14. Instructions and what the candles are
+   made of. */
 
-.care{display:grid;grid-template-columns:.8fr 1.2fr;gap:80px;align-items:center;background:var(--white)}
-.care-image img{width:100%;aspect-ratio:1/1.05;object-fit:cover}
-.care-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-top:30px}
-.care-grid div{border-top:1px solid var(--line);padding-top:12px}
-.care-grid b{font:600 21px var(--serif)}
-.care-grid p{color:var(--muted);font-size:13px;line-height:1.55;margin:6px 0 0}
+.care{background:var(--white)}
 
-@media(max-width:800px){
-  .care{grid-template-columns:1fr;gap:45px}
+.care-grid{
+  display:grid;grid-template-columns:repeat(4,1fr);gap:26px 30px;margin-top:45px;align-items:start
+}
+.care-group{border-top:1px solid var(--line);padding-top:14px}
+.care-group h3{
+  margin:0 0 10px;font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--wine)
+}
+.care-group b{display:block;margin-bottom:4px;font:600 18px var(--serif)}
+.care-group p{margin:0;color:var(--muted);font-size:13px;line-height:1.55}
+.care-group ul{margin:0;padding-left:17px;color:var(--muted);font-size:13px;line-height:1.55}
+.care-group li+li{margin-top:6px}
+/* Scoped to beat `.care-group p`, which would otherwise win on specificity. */
+.care-group .care-script{
+  margin-top:14px;font-family:var(--script);font-size:26px;line-height:1.15;color:var(--wine)
+}
+
+.care-specials{margin-top:55px;padding:34px 36px;background:var(--cream)}
+.care-specials h3{
+  margin:0 0 24px;text-align:center;font:600 24px var(--serif)
+}
+.care-specials-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:28px}
+.care-specials-grid div{text-align:center}
+.care-specials-grid b{
+  display:block;margin-bottom:6px;font-size:12px;letter-spacing:.12em;
+  text-transform:uppercase;color:var(--wine)
+}
+.care-specials-grid span{font-size:13px;line-height:1.5;color:var(--muted)}
+.care-handmade{
+  max-width:620px;margin:28px auto 0;padding-top:22px;border-top:1px solid var(--line);
+  text-align:center;font-style:italic;font-size:14px;line-height:1.6;color:var(--muted)
+}
+
+.care-thanks{
+  margin:34px 0 0;text-align:center;font-size:12px;letter-spacing:.14em;
+  text-transform:uppercase;color:var(--wine)
+}
+
+@media(max-width:1050px){
+  .care-grid{grid-template-columns:repeat(2,1fr)}
+  .care-specials-grid{grid-template-columns:repeat(2,1fr)}
 }
 @media(max-width:520px){
-  .care-grid{grid-template-columns:1fr}
+  .care-grid{grid-template-columns:1fr;gap:22px;margin-top:32px}
+  .care-specials{padding:26px 20px;margin-top:40px}
+  .care-specials-grid{grid-template-columns:1fr;gap:22px}
 }
