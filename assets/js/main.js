@@ -1,0 +1,16 @@
+/**
+ * Entry point. Loaded as a module (`<script type="module">`), so it is deferred
+ * by default and runs after the document has been parsed.
+ *
+ * Each init function is independent and no-ops when its markup hook is missing.
+ */
+import { initCollectionFilter } from './components/collection-filter.js';
+import { initCurrentYear } from './components/current-year.js';
+import { initProductGrid } from './components/product-grid.js';
+import { initSiteNav } from './components/site-nav.js';
+import { initWhatsappLinks } from './components/whatsapp-links.js';
+
+initSiteNav();
+initCollectionFilter(initProductGrid());
+initWhatsappLinks();
+initCurrentYear();

@@ -1,0 +1,15 @@
+/* Candle care guidance. */
+
+.care{display:grid;grid-template-columns:.8fr 1.2fr;gap:80px;align-items:center;background:var(--white)}
+.care-image img{width:100%;aspect-ratio:1/1.05;object-fit:cover}
+.care-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-top:30px}
+.care-grid div{border-top:1px solid var(--line);padding-top:12px}
+.care-grid b{font:600 21px var(--serif)}
+.care-grid p{color:var(--muted);font-size:13px;line-height:1.55;margin:6px 0 0}
+
+@media(max-width:800px){
+  .care{grid-template-columns:1fr;gap:45px}
+}
+@media(max-width:520px){
+  .care-grid{grid-template-columns:1fr}
+}

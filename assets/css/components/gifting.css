@@ -1,0 +1,15 @@
+/* Corporate and bulk gifting. */
+
+.gifting{display:grid;grid-template-columns:1.1fr .9fr;gap:70px;align-items:center;background:var(--cream)}
+.gifting-image img{width:100%;aspect-ratio:1.2/1;object-fit:cover}
+.gifting-list{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:28px 0 34px}
+.gifting-list span{border-top:1px solid var(--line);padding-top:8px;font:500 18px var(--serif)}
+
+@media(max-width:800px){
+  .gifting{grid-template-columns:1fr;gap:45px}
+  .gifting-copy{order:1}
+  .gifting-image{order:2}
+}
+@media(max-width:520px){
+  .gifting-list{grid-template-columns:1fr}
+}

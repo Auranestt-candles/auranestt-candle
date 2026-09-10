@@ -1,0 +1,16 @@
+/* Pack size chips inside a product card. Radios again, so the selection is
+   keyboard reachable and announced as a group. */
+
+.pack-picker{border:0;margin:14px 0 12px;padding:0}
+
+.packs{display:flex;flex-wrap:wrap;gap:6px}
+
+.pack{cursor:pointer}
+.pack input{position:absolute;opacity:0;width:0;height:0}
+.pack-label{
+  display:block;border:1px solid var(--line);padding:6px 10px;color:var(--muted);
+  font-size:11px;letter-spacing:.06em;text-transform:uppercase;white-space:nowrap;transition:.2s
+}
+.pack:hover .pack-label{border-color:var(--wine);color:var(--wine)}
+.pack input:checked + .pack-label{background:var(--wine);border-color:var(--wine);color:var(--white)}
+.pack input:focus-visible + .pack-label{outline:2px solid var(--gold);outline-offset:2px}

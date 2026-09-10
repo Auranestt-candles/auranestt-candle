@@ -1,0 +1,4 @@
+/* Full-bleed pull quote between sections. */
+
+.quote-band{padding:60px 20px;background:var(--wine);color:#fff8f2;text-align:center}
+.quote-band p{font:400 clamp(30px,4vw,52px)/1.05 var(--script);margin:0}

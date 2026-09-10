@@ -1,0 +1,34 @@
+/* A single candle: photo, meta, name, description, colours and order button. */
+
+.product-card{
+  display:flex;flex-direction:column;background:var(--paper);padding:12px;
+  box-shadow:var(--shadow-soft);transition:.3s
+}
+.product-card:hover{transform:translateY(-5px);box-shadow:var(--shadow)}
+.product-card.is-hidden{display:none}
+
+.product-image{background:#eee1d5;overflow:hidden;aspect-ratio:1/1.08}
+.product-image img{width:100%;height:100%;object-fit:cover;transition:.5s}
+.product-card:hover .product-image img{transform:scale(1.035)}
+
+.product-meta{
+  display:flex;justify-content:space-between;align-items:baseline;gap:10px;margin-top:16px;
+  font-size:11px;font-weight:500;letter-spacing:.1em;color:var(--wine)
+}
+/* The price carries the decision, so it gets the serif and the size. */
+.product-meta b{font:600 22px/1 var(--serif);letter-spacing:0}
+
+.product-card h3{font:600 28px/1 var(--serif);margin:7px 0}
+/* The copy has to carry the candle, so it is set to read, not to fit.
+   min-height keeps the pickers on one line across a row of cards. */
+.product-card p{font-size:13px;line-height:1.55;color:var(--muted);min-height:80px;margin:0}
+
+.order-btn{
+  border:0;border-top:1px solid var(--line);background:none;width:100%;
+  margin-top:auto;padding:12px 0 4px;text-align:left;color:var(--wine);
+  font-size:11px;text-transform:uppercase;letter-spacing:.08em;cursor:pointer
+}
+
+@media(max-width:520px){
+  .product-card h3{font-size:30px}
+}

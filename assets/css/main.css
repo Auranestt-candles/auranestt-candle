@@ -1,0 +1,39 @@
+/**
+ * Aura Nestt Candle — stylesheet entry point.
+ * Static site, no build step: partials are composed with @import.
+ *
+ * Order matters — tokens and base first, then layout, then components.
+ * Breakpoints used throughout (kept in sync by convention, since custom
+ * properties cannot be used in media queries):
+ *   1050px  tablet landscape and below
+ *    800px  tablet portrait and below
+ *    520px  phones
+ */
+
+/* Base */
+@import url('base/tokens.css');
+@import url('base/reset.css');
+@import url('base/typography.css');
+
+/* Layout */
+@import url('layout/header.css');
+@import url('layout/section.css');
+@import url('layout/footer.css');
+
+/* Components */
+@import url('components/icon.css');
+@import url('components/hero.css');
+@import url('components/trust-strip.css');
+@import url('components/story.css');
+@import url('components/collection-filter.css');
+@import url('components/product-grid.css');
+@import url('components/product-card.css');
+@import url('components/pack-picker.css');
+@import url('components/colour-picker.css');
+@import url('components/ordering.css');
+@import url('components/quote-band.css');
+@import url('components/customize.css');
+@import url('components/gifting.css');
+@import url('components/care.css');
+@import url('components/contact.css');
+@import url('components/floating-whatsapp.css');

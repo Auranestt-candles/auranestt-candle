@@ -1,0 +1,24 @@
+/* Ordering & delivery — the answers a buyer needs before they message:
+   how to order, what confirms it, how long, and who pays for shipping. */
+
+.ordering{background:var(--white)}
+
+.ordering-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:26px;margin-top:45px}
+.ordering-grid div{border-top:1px solid var(--line);padding-top:14px}
+.ordering-grid span{display:block;color:var(--wine);font-size:11px;letter-spacing:.14em;font-weight:700}
+.ordering-grid b{display:block;margin-top:8px;font:600 21px/1.15 var(--serif)}
+.ordering-grid p{margin:7px 0 0;color:var(--muted);font-size:13px;line-height:1.55}
+
+.ordering-note{
+  margin:38px 0 0;padding:18px 22px;background:var(--cream);
+  color:var(--muted);font-size:14px;line-height:1.6
+}
+.ordering-note b{color:var(--ink);font-weight:600}
+
+@media(max-width:800px){
+  .ordering-grid{grid-template-columns:repeat(2,1fr);gap:22px;margin-top:35px}
+}
+@media(max-width:520px){
+  .ordering-grid{grid-template-columns:1fr}
+  .ordering-note{padding:16px 18px;font-size:13px}
+}

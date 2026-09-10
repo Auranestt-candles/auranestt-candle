@@ -1,0 +1,33 @@
+/* Design tokens. The only place raw brand values are declared. */
+
+:root{
+  /* Colour */
+  /* Warmed slightly towards the blush of the printed catalog. */
+  --cream:#faeee9;
+  --paper:#fffaf7;
+  --white:#fff;
+  --ink:#30201f;
+  --muted:#735e59;
+  --wine:#7d2838;
+  --wine-dark:#5d1e2a;
+  --rose:#c98786;
+  --line:#ddc7ba;
+  --gold:#b28a62;
+  --footer-bg:#301f1f;
+  --footer-text:#f6e9df;
+  --footer-muted:#dfb2a6;
+  --whatsapp-green:#2d6a45;
+
+  /* Elevation */
+  --shadow:0 20px 60px rgba(68,39,31,.10);
+  --shadow-soft:0 8px 30px rgba(68,39,31,.05);
+
+  /* Type */
+  --serif:"Cormorant Garamond", Georgia, serif;
+  --sans:"DM Sans", Arial, sans-serif;
+  --script:"Great Vibes", cursive;
+
+  /* Spacing */
+  --gutter:clamp(24px,7vw,100px);
+  --section-space:110px;
+}

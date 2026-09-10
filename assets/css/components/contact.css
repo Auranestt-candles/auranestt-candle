@@ -1,0 +1,26 @@
+/* Contact section: WhatsApp, Instagram and email cards. */
+
+.contact{background:var(--cream);text-align:center}
+.contact-inner{max-width:1040px;margin:auto}
+.contact-inner .lead{margin:0 auto 35px}
+
+/* Column count follows the number of cards, so adding or removing one needs no
+   CSS change. */
+.contact-actions{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:14px}
+.contact-card{background:var(--paper);padding:28px 18px;border:1px solid var(--line);transition:.25s}
+.contact-card:hover{transform:translateY(-4px);border-color:var(--wine)}
+.contact-card .icon{color:var(--wine);font-size:24px;margin:0 auto}
+.contact-card b{display:block;font:600 22px var(--serif);margin-top:8px}
+.contact-card small{display:block;margin-top:4px;color:var(--muted);font-size:12px;line-height:1.45}
+
+/* The card we most want tapped: ordering directly. */
+.contact-card-primary{
+  background:var(--whatsapp-green);border-color:var(--whatsapp-green);color:var(--white)
+}
+.contact-card-primary:hover{background:#245a3a;border-color:#245a3a}
+.contact-card-primary .icon{color:inherit}
+.contact-card-primary small{color:rgba(255,255,255,.8)}
+
+@media(max-width:520px){
+  .contact-actions{grid-template-columns:1fr}
+}

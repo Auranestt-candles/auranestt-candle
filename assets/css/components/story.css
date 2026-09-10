@@ -1,0 +1,8 @@
+/* "The Aura Nestt story" — two column editorial block. */
+
+.story{background:var(--white)}
+.story-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:80px;margin-top:28px}
+
+@media(max-width:800px){
+  .story-grid{grid-template-columns:1fr;gap:20px}
+}
