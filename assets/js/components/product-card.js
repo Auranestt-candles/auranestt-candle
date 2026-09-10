@@ -126,21 +126,53 @@ export function productCardTemplate(product) {
     </article>`;
 }
 
+/** How long a swap may take before it is worth showing a spinner. */
+const SPINNER_DELAY_MS = 120;
+
 /**
  * Reflects the chosen colour: swaps the photo, updates the alt text and the
  * legend.
+ *
+ * The new photo is decoded off-screen first, so the card keeps showing the
+ * previous colour until the next one is ready to paint — no blank frame, and a
+ * failed load leaves the card as it was. A spinner appears only if the fetch
+ * outlasts `SPINNER_DELAY_MS`, so a cached colour swaps without a flicker.
  *
  * @param {Element} card
  * @param {import('../data/products.js').Product} product
  * @param {HTMLInputElement} radio The selected colour radio.
  */
 export function showColour(card, product, radio) {
+  const frame = qs('.product-image', card);
   const image = /** @type {HTMLImageElement} */ (qs('.product-image img', card));
   const label = qs('.colour-label', card);
+  const source = radio.dataset.image;
+  const alt = `${product.alt} — ${radio.value}`;
 
-  image.src = radio.dataset.image;
-  image.alt = `${product.alt} — ${radio.value}`;
   if (label) label.textContent = radio.value;
+
+  if (image.getAttribute('src') === source) {
+    image.alt = alt;
+    return;
+  }
+
+  const spinner = setTimeout(() => frame.classList.add('is-loading'), SPINNER_DELAY_MS);
+  const settle = () => {
+    clearTimeout(spinner);
+    // A later click may have won the race; that swap owns the card now.
+    if (radio.checked) frame.classList.remove('is-loading');
+  };
+
+  const next = new Image();
+  next.addEventListener('load', () => {
+    if (!radio.checked) return settle();
+    image.src = source;
+    image.alt = alt;
+    settle();
+  });
+  // On failure the previous photo stays put rather than breaking the card.
+  next.addEventListener('error', settle);
+  next.src = source;
 }
 
 /**
