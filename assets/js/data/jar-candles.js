@@ -18,24 +18,17 @@
 /**
  * Photographs of jars we have poured, shown above the price table.
  *
- * TODO: every entry currently points at the one jar photo we have. Drop the
- * real shots into `assets/images/products/jar-candles/` and update `image` and
- * `alt` — the alt text should say which container it is, since that is what a
- * shopper is trying to match against the table below.
- *
  * @type {{image: string, alt: string}[]}
  */
 export const jarGallery = [
-  { image: 'jar-candles/clear-glass.jpg', alt: 'Aura Nestt jar candle' },
-  { image: 'jar-candles/clear-glass.jpg', alt: 'Aura Nestt jar candle' },
-  { image: 'jar-candles/clear-glass.jpg', alt: 'Aura Nestt jar candle' },
-  { image: 'jar-candles/clear-glass.jpg', alt: 'Aura Nestt jar candle' },
-  { image: 'jar-candles/clear-glass.jpg', alt: 'Aura Nestt jar candle' },
-  { image: 'jar-candles/clear-glass.jpg', alt: 'Aura Nestt jar candle' },
-  { image: 'jar-candles/clear-glass.jpg', alt: 'Aura Nestt jar candle' },
-  { image: 'jar-candles/clear-glass.jpg', alt: 'Aura Nestt jar candle' },
-  { image: 'jar-candles/clear-glass.jpg', alt: 'Aura Nestt jar candle' },
-  { image: 'jar-candles/clear-glass.jpg', alt: 'Aura Nestt jar candle' },
+  { image: 'jar-candles/jar_1.jpg', alt: 'Aura Nestt jar candle' },
+  { image: 'jar-candles/jar_2.jpg', alt: 'Aura Nestt jar candle' },
+  { image: 'jar-candles/jar_3.jpg', alt: 'Aura Nestt jar candle' },
+  { image: 'jar-candles/jar_4.jpg', alt: 'Aura Nestt jar candle' },
+  { image: 'jar-candles/jar_5.jpg', alt: 'Aura Nestt jar candle' },
+  { image: 'jar-candles/jar_6.jpg', alt: 'Aura Nestt jar candle' },
+  { image: 'jar-candles/jar_7.jpg', alt: 'Aura Nestt jar candle' },
+  { image: 'jar-candles/jar_8.jpg', alt: 'Aura Nestt jar candle' },
 ];
 
 /** @type {JarSize[]} */

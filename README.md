@@ -210,3 +210,7 @@ visitors with JavaScript disabled see the `<noscript>` message in the collection
 section instead of the grid. If search indexing of individual products becomes
 important, add a small Node script that pre-renders the cards into `index.html`
 at commit time.
+
+
+## command for push access
+`ssh-add --apple-use-keychain ~/.ssh/auranestt`
