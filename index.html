@@ -54,6 +54,9 @@
       <circle cx="7.9" cy="16.1" r="3.3"/>
       <circle cx="16.1" cy="16.1" r="3.3"/>
     </symbol>
+    <symbol id="icon-pin" viewBox="0 0 24 24" fill-rule="evenodd">
+      <path d="M12 1.8a7.6 7.6 0 0 1 7.6 7.6c0 2.3-1.3 4.9-2.9 7.1a35 35 0 0 1-4.2 4.8 1 1 0 0 1-1 0 35 35 0 0 1-4.2-4.8c-1.6-2.2-2.9-4.8-2.9-7.1A7.6 7.6 0 0 1 12 1.8m0 4.9a2.8 2.8 0 1 0 0 5.6 2.8 2.8 0 0 0 0-5.6"/>
+    </symbol>
     <symbol id="icon-gift" viewBox="0 0 24 24">
       <ellipse cx="9.3" cy="4.6" rx="2.5" ry="2.1"/>
       <ellipse cx="14.7" cy="4.6" rx="2.5" ry="2.1"/>
@@ -181,7 +184,7 @@
           <li>
             <span class="promise-icon"><svg class="icon" aria-hidden="true" focusable="false"><use href="#icon-handmade"></use></svg></span>
             <b>Handmade to order</b>
-            <p>Nothing is bought in and boxed. Every candle is sculpted and poured by hand, after you order it.</p>
+            <p>Every candle in the box is sculpted and poured by hand after you order it — never bought in ready-made.</p>
           </li>
           <li>
             <span class="promise-icon"><svg class="icon" aria-hidden="true" focusable="false"><use href="#icon-swatches"></use></svg></span>
@@ -326,6 +329,28 @@
             <svg class="icon" aria-hidden="true" focusable="false"><use href="#icon-instagram"></use></svg>
             <b>Instagram</b><small>@auranestt_candle</small>
           </a>
+        </div>
+
+        <div class="contact-location">
+          <div class="location-card">
+            <span class="location-pin"><svg class="icon" aria-hidden="true" focusable="false"><use href="#icon-pin"></use></svg></span>
+            <div class="section-kicker">WHERE WE POUR</div>
+            <h3>Aura Nestt Candle</h3>
+            <address>Crossing Republik<br>Ghaziabad, Uttar Pradesh 201016<br>India</address>
+            <a class="text-link"
+               href="https://www.google.com/maps/search/?api=1&amp;query=Crossing%20Republik%2C%20Ghaziabad%2C%20201016"
+               target="_blank" rel="noopener">Open in Google Maps →</a>
+          </div>
+          <!-- Keyless Google Maps embed, so there is no API key to keep.
+               It is third-party and lazy-loaded; the link beside it is what
+               guarantees the address is reachable if the frame is blocked. -->
+          <div class="location-map">
+            <iframe
+              src="https://maps.google.com/maps?q=Crossing%20Republik%2C%20Ghaziabad%2C%20201016&amp;z=15&amp;output=embed"
+              title="Map showing Crossing Republik, Ghaziabad"
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"></iframe>
+          </div>
         </div>
       </div>
     </section>

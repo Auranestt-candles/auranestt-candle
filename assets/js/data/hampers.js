@@ -53,8 +53,7 @@ export const hampers = [
       'Four pastel soy jars under brushed gold lids, each sitting in its own gold-lined well inside a deep red magnetic box — the lid lifts like something expensive.',
     contents: [
       '4 pastel jar candles',
-      'Brushed gold screw lids',
-      'Gold-lined compartment tray',
+      'Your choice of 4 fragrances',
       'Rigid magnetic-close box',
     ],
     occasions: ['Diwali', 'Corporate gifting', 'Housewarmings', 'Big thank-yous'],
@@ -68,11 +67,12 @@ export const hampers = [
     scale: '2 CANDLES + CHOCOLATES',
     badge: 'Bestseller',
     description:
-      'A gold-foiled lid with your message on it, two gold-rimmed flower bowls and a box of chocolates on a bed of shredded paper. The greeting is printed, so it can say anything.',
+      'Two gold-rimmed flower bowls and a box of chocolates on a bed of shredded paper, under a gold-foiled greeting lid — in maroon, blush, green or mustard.',
     contents: [
       '2 flower bowl candles, 3 wicks each',
-      'Dried-flower and gold leaf finish',
-      'Boxed chocolates',
+      'Gold-fleck finish on both',
+      '5-piece box of chocolates',
+      'Choice of four lid colours',
     ],
     occasions: ['Diwali', 'Weddings', 'Corporate gifting', 'Festive giveaways'],
     from: 599,
@@ -84,10 +84,10 @@ export const hampers = [
     name: 'The Bloom Box',
     scale: '9 BLOOM CANDLES · GIFT BOX',
     description:
-      'Nine hand-sculpted blooms, each in its own tissue-lined compartment. It opens like a box of flowers and outlasts one by a few years.',
+      'Nine hand-sculpted blooms, each in its own paper-lined compartment. It opens like a box of flowers and outlasts one by a few years.',
     contents: [
       '9 sculpted bloom candles',
-      'One per tissue-lined compartment',
+      'One bloom per lined compartment',
       'Your choice of palette',
       'White rigid gift box',
     ],
@@ -114,12 +114,12 @@ export const hampers = [
     name: 'The Treat Box',
     scale: '2 CANDLES + TREATS · LARGE BOX',
     description:
-      'Two of our scented jars with a row of namkeen, chocolate and something cold behind them — for the people who want a gift to open and a gift to finish.',
+      'Two of our scented jars with a row of namkeen, chocolate and a bottled drink behind them — for the people who want a gift to open and a gift to finish.',
     contents: [
-      '2 scented jar candles',
+      '2 scented jars — gel & soy wax',
       '4 packs of namkeen',
       'Dark chocolate & coated almonds',
-      'A chilled drink',
+      'A bottled soft drink',
       'Gold box with a satin bow',
     ],
     occasions: ['Diwali', 'Corporate gifting', 'Client gifts', 'Festive giveaways'],
@@ -132,14 +132,14 @@ export const hampers = [
     name: 'The Tiered Centrepiece',
     scale: '3-TIER STAND · ONE PIECE',
     description:
-      'Not a box — three scalloped gold tiers poured with pearl-studded wax, lit from a dozen wicks at once. It is the thing on the table everyone looks at.',
+      'Not a box — three scalloped gold tiers poured with pearl-studded wax, lit from every tier at once. It is the thing on the table everyone looks at.',
     contents: [
       'Three-tier gold metal stand',
       'Pearl-studded hand-poured wax',
-      'A dozen wicks across the tiers',
-      'Re-poured for you once it burns down',
+      'Multiple wicks on every tier',
+      'Your choice of wax colours',
     ],
-    occasions: ['Weddings', 'Anniversaries', 'Festive tables', 'Milestone events'],
+    occasions: ['Weddings', 'Anniversaries', 'Milestone events', 'Diwali'],
     from: 599,
     badge: 'Statement piece',
     image: 'hampers/tiered-centrepiece.jpg',
@@ -150,7 +150,7 @@ export const hampers = [
 /** The closing note under the grid — build-your-own and bulk. */
 export const hamperNote = {
   title: 'Or build the box yourself.',
-  text: 'Every hamper above is a starting point, not a fixed set — swap any candle, change the palette, add or drop a piece, or print the lid for the occasion. Tell us the budget per box and how many you need, and we will put one together around it. Bulk pricing applies from 25 boxes onwards.',
+  text: 'Every hamper above is a starting point, not a fixed set — swap any candle, change the palette, or add and drop pieces until the box is what you wanted. Tell us the budget per box and how many you need, and we will put one together around it. Bulk pricing applies from 25 boxes onwards.',
   cta: 'Build your own hamper',
   message:
     "Hi Aura Nestt! I'd like to put a hamper together. Here's the budget per box and the quantity I have in mind:",
