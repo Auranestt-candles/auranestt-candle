@@ -52,6 +52,8 @@ const SWATCH = {
   white: '#f1e7da',
   skyBlue: '#a9cbe6',
   clearGlass: '#e9edee',
+  // The red of our rigid gift boxes.
+  giftBox: '#8d2b3b',
   // A mixed pack is not one colour, so the swatch shows what is in the box.
   multicolor:
     'conic-gradient(from 135deg, #ecc45f 0 25%, #7fa9d2 25% 50%, #e2929b 50% 75%, #a98ace 75% 100%)',
@@ -289,5 +291,22 @@ export const products = [
       { name: 'Clear Glass', hex: SWATCH.clearGlass, image: 'jar-candles/clear-glass.jpg' },
     ],
     order: { cta: 'See jars & prices', href: '#jar-candles' },
+  },
+  {
+    id: 'hampers',
+    name: 'Gift Hampers',
+    collection: 'CELEBRATION HAMPERS',
+    description: 'Handmade hampers, fully customisable — boxed sets of our candles for festivals, weddings and corporate gifting.',
+    categories: ['gifting'],
+    image: 'hampers/jar-quartet.jpg',
+    alt: 'Aura Nestt celebration hampers',
+    // Quoted per box rather than priced by pack — see `data/hampers.js`.
+    packs: [],
+    // Tracks the lowest `from` in `data/hampers.js`; keep the two in step.
+    priceLabel: 'FROM ₹599',
+    colours: [
+      { name: 'Gift Box', hex: SWATCH.giftBox, image: 'hampers/jar-quartet.jpg' },
+    ],
+    order: { cta: 'See all hampers', href: '#hampers' },
   },
 ];

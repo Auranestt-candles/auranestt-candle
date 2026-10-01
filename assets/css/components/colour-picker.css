@@ -1,5 +1,6 @@
-/* Colour swatches inside a product card. Each swatch is a styled radio: the
-   input stays in the accessibility tree, the dot next to it is what is seen. */
+/* Colour swatches, used by the product cards and by the hamper cards for their
+   palette variations. Each swatch is a styled radio: the input stays in the
+   accessibility tree, the dot next to it is what is seen. */
 
 .colour-picker{border:0;margin:0 0 10px;padding:0}
 .colour-picker legend{

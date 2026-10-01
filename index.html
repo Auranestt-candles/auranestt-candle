@@ -39,6 +39,29 @@
     <symbol id="icon-instagram" viewBox="0 0 24 24">
       <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069M12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0m0 5.838a6.162 6.162 0 1 0 0 12.324 6.162 6.162 0 0 0 0-12.324M12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8m6.406-11.845a1.44 1.44 0 1 0 0 2.881 1.44 1.44 0 0 0 0-2.881"/>
     </symbol>
+    <!-- The three hamper promises. Drawn as solid shapes like the icons above,
+         with the gift box's ribbon left as a gap rather than a second colour. -->
+    <symbol id="icon-handmade" viewBox="0 0 24 24">
+      <rect x="7.7" y="3.2" width="2.15" height="9.3" rx="1.07"/>
+      <rect x="10.5" y="2.2" width="2.15" height="10.3" rx="1.07"/>
+      <rect x="13.3" y="3.2" width="2.15" height="9.3" rx="1.07"/>
+      <rect x="16.1" y="5.2" width="2.15" height="7.3" rx="1.07"/>
+      <path d="M6.3 11.6h12.6a1.2 1.2 0 0 1 1.2 1.2v3.1a5.4 5.4 0 0 1-5.4 5.4h-4.2a5.4 5.4 0 0 1-5.4-5.4v-3.1a1.2 1.2 0 0 1 1.2-1.2z"/>
+    </symbol>
+    <symbol id="icon-swatches" viewBox="0 0 24 24">
+      <circle cx="7.9" cy="7.9" r="3.3"/>
+      <circle cx="16.1" cy="7.9" r="3.3"/>
+      <circle cx="7.9" cy="16.1" r="3.3"/>
+      <circle cx="16.1" cy="16.1" r="3.3"/>
+    </symbol>
+    <symbol id="icon-gift" viewBox="0 0 24 24">
+      <ellipse cx="9.3" cy="4.6" rx="2.5" ry="2.1"/>
+      <ellipse cx="14.7" cy="4.6" rx="2.5" ry="2.1"/>
+      <rect x="3.2" y="7.6" width="7.9" height="3.4" rx=".8"/>
+      <rect x="12.9" y="7.6" width="7.9" height="3.4" rx=".8"/>
+      <rect x="4.6" y="12" width="6.5" height="8.8" rx=".8"/>
+      <rect x="12.9" y="12" width="6.5" height="8.8" rx=".8"/>
+    </symbol>
   </svg>
 
   <div class="announcement">Handmade with love in India <span>•</span> Order on WhatsApp, we reply personally</div>
@@ -141,6 +164,41 @@
       <div data-jar-price-guide></div>
 
       <p class="jar-footnote">Bulk orders, corporate gifting and return gifts available · Custom packaging on request</p>
+    </section>
+
+    <section class="hampers section" id="hampers">
+      <div class="section-heading">
+        <div>
+          <div class="section-kicker">CELEBRATION HAMPERS</div>
+          <h2>Gift the glow,<br><em>beautifully boxed.</em></h2>
+        </div>
+        <p class="lead">Every hamper is handmade in our workshop and fully customisable. They are built around the box and what goes in it rather than around a single festival — so the same hamper works for Diwali, a wedding or a housewarming.</p>
+      </div>
+
+      <div class="hamper-promise">
+        <p class="promise-lead">Every hamper, without exception</p>
+        <ul>
+          <li>
+            <span class="promise-icon"><svg class="icon" aria-hidden="true" focusable="false"><use href="#icon-handmade"></use></svg></span>
+            <b>Handmade to order</b>
+            <p>Nothing is bought in and boxed. Every candle is sculpted and poured by hand, after you order it.</p>
+          </li>
+          <li>
+            <span class="promise-icon"><svg class="icon" aria-hidden="true" focusable="false"><use href="#icon-swatches"></use></svg></span>
+            <b>Fully customisable</b>
+            <p>Swap any candle, colour, fragrance, box or printed message. The hampers are starting points, not fixed sets.</p>
+          </li>
+          <li>
+            <span class="promise-icon"><svg class="icon" aria-hidden="true" focusable="false"><use href="#icon-gift"></use></svg></span>
+            <b>Better in bulk</b>
+            <p>Bulk pricing from 25 boxes, with custom packaging and your branding where you need it.</p>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Cards and the custom-hamper note are rendered from assets/js/data/hampers.js -->
+      <div class="hamper-grid" data-hamper-grid></div>
+      <div data-hamper-note></div>
     </section>
 
     <section class="ordering section" id="ordering">
@@ -279,7 +337,7 @@
       <p>Light the vibe. Feel the aura.</p>
     </div>
     <div class="footer-links">
-      <a href="#collections">Shop</a><a href="#ordering">How to order</a><a href="#customize">Customize</a><a href="#gifting">Bulk gifting</a><a href="#care">Candle care</a>
+      <a href="#collections">Shop</a><a href="#hampers">Hampers</a><a href="#ordering">How to order</a><a href="#customize">Customize</a><a href="#gifting">Bulk gifting</a><a href="#care">Candle care</a>
     </div>
     <div class="footer-note">Handcrafted with love in India · © <span data-current-year></span> Aura Nestt Candle</div>
   </footer>

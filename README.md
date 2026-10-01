@@ -19,6 +19,7 @@ assets/
     data/
       products.js              the candle catalogue (single source of truth)
       jar-candles.js           jar price guide: containers, sizes, price factors
+      hampers.js               celebration hampers: contents, variations, prices
       customize.js             the five customisation steps and their options
       candle-care.js           care instructions, burn time, what's in a candle
       navigation.js            nav links and collection filters
@@ -31,11 +32,26 @@ assets/
     brand/                     logo art and the hero photograph
     sections/                  photography for a page section (care, gifting)
     products/<product-id>/     one folder per candle, one photo per colour
+    products/hampers/          one photo per hamper, plus one per variation
 ```
 
 Product photos are addressed as `<product-id>/<colour>.jpg`, e.g.
 `products/peony-rose/pink.jpg`, and the base path is `PRODUCT_IMAGE_PATH` in
 `config.js` — so `image` values in `products.js` stay short.
+
+Hamper photos share that base path and are named after the hamper id, with a
+suffix per variation: `hampers/bloom-box-spectrum.jpg`,
+`hampers/bloom-box-blush.jpg`.
+
+Full-resolution originals are kept under `originals/`, mirroring the same
+folder layout, and only the compressed copy under `assets/` is what the page
+loads. Compress with the settings used so far — longest side 900 px, JPEG
+quality 65:
+
+```sh
+sips -Z 900 -s format jpeg -s formatOptions 65 originals/images/products/hampers/hamper_1.png \
+  --out assets/images/products/hampers/jar-quartet.jpg
+```
 
 The Customize section reuses `products/jar-candles/clear-glass.jpg` rather than
 keeping a second copy of the same photograph.

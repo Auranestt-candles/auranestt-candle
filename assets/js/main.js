@@ -8,6 +8,7 @@ import { initCandleCare } from './components/candle-care.js';
 import { initCollectionFilter } from './components/collection-filter.js';
 import { initCustomizeSteps } from './components/customize-steps.js';
 import { initCurrentYear } from './components/current-year.js';
+import { initHampers } from './components/hampers.js';
 import { initJarPriceGuide } from './components/jar-price-guide.js';
 import { initProductGrid } from './components/product-grid.js';
 import { initSiteNav } from './components/site-nav.js';
@@ -18,5 +19,7 @@ initCollectionFilter(initProductGrid());
 initCustomizeSteps();
 initCandleCare();
 initJarPriceGuide();
+// Before initWhatsappLinks(): the hamper cards it renders carry WhatsApp links.
+initHampers();
 initWhatsappLinks();
 initCurrentYear();
