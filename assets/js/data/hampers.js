@@ -107,12 +107,14 @@ export const hampers = [
         name: 'Blush & ivory',
         swatch: 'linear-gradient(135deg, #f0a3ad 0 50%, #f6ead9 50% 100%)',
         image: 'hampers/bloom-box-blush.jpg',
+        from: 799,
       },
       {
         name: 'Full spectrum',
         swatch:
           'conic-gradient(from 135deg, #cf2233 0 20%, #e2929b 20% 40%, #7fa9d2 40% 60%, #e0b03a 60% 80%, #5f8a63 80% 100%)',
         image: 'hampers/bloom-box-spectrum.jpg',
+        from: 899,
       },
     ],
   },
