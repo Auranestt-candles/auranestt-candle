@@ -4,27 +4,35 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#7d2838">
-  <meta name="description" content="Handmade soy wax candles, poured by hand in India. Sculpted florals, moons, hearts and jar candles in your choice of colour and pack size. Order on WhatsApp or find us on Flipkart.">
-  <title>Aura Nestt Candle — Handmade Soy Candles, Made in India</title>
+  <!-- Kept under ~160 characters, which is where Google truncates. Deliberately
+       carries no prices, so it is not a third place to keep in step with the
+       catalogue. -->
+  <meta name="description" content="Handmade soy candles and gift hampers, poured by hand in India. Sculpted florals, moons and jar candles, plus boxed hampers made to order — one gift or a hundred.">
+  <title>Aura Nestt Candle — Handmade Candles &amp; Gift Hampers, India</title>
 
   <link rel="canonical" href="https://auranestt-candles.github.io/auranestt-candle/">
 
-  <!-- Tab and home-screen icon. The SVG covers every modern browser; the PNG is
-       for iOS, which does not take an SVG icon. -->
-  <link rel="icon" href="assets/images/brand/favicon.svg" type="image/svg+xml">
-  <link rel="apple-touch-icon" href="assets/images/brand/apple-touch-icon.png">
+  <!-- Tab and home-screen icon: the logo mark itself. -->
+  <link rel="icon" href="assets/images/brand/logo-mark.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="assets/images/brand/logo-mark.svg">
 
   <!-- Sharing card, e.g. when the link is posted in a WhatsApp group.
        These URLs must stay absolute — Open Graph will not accept relative paths. -->
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="Aura Nestt Candle">
-  <meta property="og:title" content="Aura Nestt Candle — Handmade Soy Candles, Made in India">
-  <meta property="og:description" content="Sculpted florals, moons, hearts and jar candles — hand-poured in small batches, in your choice of colour and pack size.">
+  <meta property="og:title" content="Aura Nestt Candle — Handmade Candles &amp; Gift Hampers, India">
+  <meta property="og:description" content="Sculpted florals, moons, hearts and jar candles — hand-poured in small batches. Plus celebration hampers, handmade and fully customisable, for one gift or a hundred.">
   <meta property="og:url" content="https://auranestt-candles.github.io/auranestt-candle/">
-  <meta property="og:image" content="https://auranestt-candles.github.io/auranestt-candle/assets/images/brand/hero-catalog.jpg">
-  <meta property="og:image:width" content="1130">
-  <meta property="og:image:height" content="1600">
-  <meta property="og:image:alt" content="The Aura Nestt candle collection">
+  <!-- The logo mark on a 1200x630 card. It has to be a JPEG, not the SVG the
+       rest of the site uses: WhatsApp, Slack, Facebook and Twitter all reject
+       SVG for og:image and show a broken thumbnail instead. 1200x630 because
+       preview cards are landscape — a portrait image gets shrunk to a corner
+       thumbnail rather than running the full width. -->
+  <meta property="og:image" content="https://auranestt-candles.github.io/auranestt-candle/assets/images/brand/logo-share.jpg">
+  <meta property="og:image:type" content="image/jpeg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="The Aura Nestt Candle logo — a pink jar candle framed by botanical sprigs">
   <meta name="twitter:card" content="summary_large_image">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -79,7 +87,7 @@
 
   <header class="site-header" id="top">
     <a class="brand" href="#home" aria-label="Aura Nestt home">
-      <span class="brand-mark" aria-hidden="true">♧</span>
+      <img class="brand-mark" src="assets/images/brand/logo-mark.svg" alt="" width="68" height="42">
       <span>
         <strong>AURA NESTT</strong>
         <small>CANDLE</small>
