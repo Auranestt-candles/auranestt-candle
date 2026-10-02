@@ -1,11 +1,13 @@
 /* Festival and celebration hampers: a card per occasion, then the custom note. */
 
-.hampers{background:var(--paper)}
+/* Cream, like the collections grid: the two card sections now read as the same
+   kind of page, and the section tones alternate all the way down the page. */
+.hampers{background:var(--cream)}
 
 /* What is true of every hamper, said once so each card does not repeat it.
    A cream panel inside a paper section, so it reads as a framed aside rather
    than another row of cards. */
-.hamper-promise{margin-top:55px;padding:40px 44px;background:var(--cream);border:1px solid var(--line)}
+.hamper-promise{margin-top:55px;padding:40px 44px;background:var(--white);border:1px solid var(--line)}
 
 /* The script face is the brand's emphasis voice — used here instead of a
    heading, so the panel sits below the section's h2 without competing. */
@@ -121,7 +123,7 @@
 
 .hamper-note{
   display:flex;justify-content:space-between;align-items:center;gap:40px;
-  margin-top:45px;padding:34px 38px;background:var(--cream)
+  margin-top:45px;padding:34px 38px;background:var(--white)
 }
 .hamper-note b{display:block;font:600 30px/1.1 var(--serif);margin-bottom:10px}
 .hamper-note p{margin:0;max-width:620px;font-size:15px;line-height:1.6;color:var(--muted)}

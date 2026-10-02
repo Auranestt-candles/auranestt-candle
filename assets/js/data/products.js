@@ -302,8 +302,9 @@ export const products = [
     alt: 'Aura Nestt celebration hampers',
     // Quoted per box rather than priced by pack — see `data/hampers.js`.
     packs: [],
-    // Tracks the lowest `from` in `data/hampers.js`; keep the two in step.
-    priceLabel: 'FROM ₹599',
+    // Tracks the lowest price in `data/hampers.js` — including per-variation
+    // prices, which can undercut a hamper's own `from`. Keep the two in step.
+    priceLabel: 'FROM ₹499',
     colours: [
       { name: 'Gift Box', hex: SWATCH.giftBox, image: 'hampers/jar-quartet.jpg' },
     ],
