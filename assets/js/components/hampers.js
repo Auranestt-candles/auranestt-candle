@@ -24,6 +24,20 @@ import { openWhatsapp, orderMessage } from '../lib/whatsapp.js';
 const hamperFor = hamperId => hampers.find(hamper => hamper.id === hamperId);
 
 /**
+ * The price in force on a card: the chosen variation's, where it names one, and
+ * the hamper's own otherwise. A variation only carries a price when it costs
+ * differently — a trunk holding four jars instead of two — so most fall through.
+ *
+ * @param {import('../data/hampers.js').Hamper} hamper
+ * @param {Element} card
+ * @returns {number}
+ */
+function priceOn(hamper, card) {
+  const checked = /** @type {HTMLInputElement | null} */ (qs('.swatch input:checked', card));
+  return Number(checked?.dataset.from) || hamper.from;
+}
+
+/**
  * @param {import('../data/hampers.js').Hamper} hamper
  * @param {import('../data/hampers.js').HamperVariation} variation
  * @param {boolean} isDefault
@@ -35,6 +49,8 @@ function variationTemplate(hamper, variation, isDefault) {
   const image = variation.image
     ? ` data-image="${PRODUCT_IMAGE_PATH}/${escapeHtml(variation.image)}"`
     : '';
+  // Only present when this variation is priced differently from the hamper.
+  const from = variation.from ? ` data-from="${variation.from}"` : '';
 
   return `
     <label class="swatch" title="${name}">
@@ -42,7 +58,7 @@ function variationTemplate(hamper, variation, isDefault) {
         type="radio"
         name="variation-${escapeHtml(hamper.id)}"
         value="${name}"
-        ${image}
+        ${image}${from}
         ${isDefault ? 'checked' : ''}
       >
       <span class="swatch-dot" style="--swatch:${escapeHtml(variation.swatch || variation.hex)}"></span>
@@ -78,6 +94,9 @@ function variationPickerTemplate(hamper) {
 function cardTemplate(hamper) {
   const contents = hamper.contents.map(item => `<li>${escapeHtml(item)}</li>`).join('');
   const occasions = hamper.occasions.map(item => `<li>${escapeHtml(item)}</li>`).join('');
+  // The headline price belongs to the variation that loads selected.
+  const [defaultVariation] = hamper.variations || [];
+  const from = defaultVariation?.from || hamper.from;
 
   return `
     <article class="hamper-card" data-hamper-id="${escapeHtml(hamper.id)}">
@@ -88,7 +107,7 @@ function cardTemplate(hamper) {
 
       <div class="hamper-meta">
         <span>${escapeHtml(hamper.scale)}</span>
-        <b>FROM ${escapeHtml(formatPrice(hamper.from))}</b>
+        <b data-price>FROM ${escapeHtml(formatPrice(from))}</b>
       </div>
 
       <h3>${escapeHtml(hamper.name)}</h3>
@@ -144,6 +163,10 @@ function showVariation(card, hamper, radio) {
   const label = qs('.colour-label', card);
   if (label) label.textContent = radio.value;
 
+  // A bigger trunk costs more, so the headline follows the swatch.
+  const price = qs('[data-price]', card);
+  if (price) price.textContent = `FROM ${formatPrice(priceOn(hamper, card))}`;
+
   const frame = qs('.hamper-image', card);
   const image = /** @type {HTMLImageElement} */ (qs('.hamper-image img', card));
   const source = radio.dataset.image;
@@ -187,7 +210,7 @@ function enquirySummaryFor(hamper, card) {
 
   const parts = [`${hamper.name} hamper`];
   if (variation) parts.push(variation.value);
-  parts.push(`from ${formatPrice(hamper.from)}`);
+  parts.push(`from ${formatPrice(priceOn(hamper, card))}`);
   return parts.join(' — ');
 }
 

@@ -23,6 +23,11 @@
  *                             Omit it when every variation shares one
  *                             photograph — the choice is still recorded and
  *                             sent, the photo simply stays put.
+ * @property {number} [from]   Starting price for this variation, when it costs
+ *                             differently from the rest — a trunk holding four
+ *                             jars rather than two. Choosing it updates the
+ *                             headline price and the WhatsApp message. Omit it
+ *                             and the variation uses the hamper's own `from`.
  *
  * @typedef {object} Hamper
  * @property {string} id           Unique, kebab-case.
@@ -33,7 +38,9 @@
  * @property {string[]} contents   What is in the box, shortest first.
  * @property {string[]} occasions  Where this box tends to be sent. Hints, not
  *                                 categories — any box suits any occasion.
- * @property {number} from         Starting price in rupees, for `FROM ₹…`.
+ * @property {number} from         Starting price in rupees, for `FROM ₹…`. With
+ *                                 priced variations this is the lowest of them,
+ *                                 and the fallback for any that name no price.
  * @property {string} [badge]      Optional ribbon, e.g. 'Bestseller'.
  * @property {string} image        Default photo, shown before any variation is
  *                                 picked. Path under `assets/images/products/`.
@@ -93,19 +100,19 @@ export const hampers = [
     ],
     occasions: ['Weddings', 'Anniversaries', "Mother's Day", 'Housewarmings'],
     from: 899,
-    image: 'hampers/bloom-box-spectrum.jpg',
+    image: 'hampers/bloom-box-blush.jpg',
     alt: 'Nine sculpted bloom candles in a white compartment gift box',
     variations: [
+      {
+        name: 'Blush & ivory',
+        swatch: 'linear-gradient(135deg, #f0a3ad 0 50%, #f6ead9 50% 100%)',
+        image: 'hampers/bloom-box-blush.jpg',
+      },
       {
         name: 'Full spectrum',
         swatch:
           'conic-gradient(from 135deg, #cf2233 0 20%, #e2929b 20% 40%, #7fa9d2 40% 60%, #e0b03a 60% 80%, #5f8a63 80% 100%)',
         image: 'hampers/bloom-box-spectrum.jpg',
-      },
-      {
-        name: 'Blush & ivory',
-        swatch: 'linear-gradient(135deg, #f0a3ad 0 50%, #f6ead9 50% 100%)',
-        image: 'hampers/bloom-box-blush.jpg',
       },
     ],
   },
@@ -142,8 +149,107 @@ export const hampers = [
     occasions: ['Weddings', 'Anniversaries', 'Milestone events', 'Diwali'],
     from: 599,
     badge: 'Statement piece',
-    image: 'hampers/tiered-centrepiece.jpg',
-    alt: 'Three-tier gold candle stand poured with pink and yellow pearl-studded wax',
+    image: 'hampers/tiered-centrepiece-ivory.jpg',
+    alt: 'Three-tier gold candle stand poured with pearl-studded wax',
+    // Three wax colourways on the same stand — the tiers are poured to order.
+    variations: [
+      { name: 'Ivory', hex: '#f5ead0', image: 'hampers/tiered-centrepiece-ivory.jpg' },
+      {
+        name: 'Blush',
+        swatch: 'linear-gradient(135deg, #f0a3ad 0 50%, #f3e2b4 50% 100%)',
+        image: 'hampers/tiered-centrepiece-blush.jpg',
+      },
+      { name: 'Amber', hex: '#edb982', image: 'hampers/tiered-centrepiece-amber.jpg' },
+    ],
+  },
+  {
+    id: 'keepsake-trunk',
+    name: 'The Keepsake Trunk',
+    scale: '2–4 JAR CANDLES · TRUNK BOX',
+    description:
+      'Jar candles in a hinged trunk with a brass handle and a satin bed, their lids papered to match the box. The candles burn down; the trunk gets kept and used.',
+    contents: [
+      '2, 3 or 4 jar candles by trunk size',
+      'Lids papered to match the box',
+      'Choice of 8 candle colours',
+    ],
+    occasions: ['Diwali', 'Weddings', 'Corporate gifting', 'Housewarmings'],
+    from: 499,
+    image: 'hampers/trunk-candles-teal.jpg',
+    alt: 'Jar candles in a patterned trunk box with a brass handle',
+    variations: [
+      {
+        name: 'Teal floral · 2 jars',
+        swatch: 'linear-gradient(135deg, #1f6b6a 0 55%, #f2efe6 55% 100%)',
+        image: 'hampers/trunk-candles-teal.jpg',
+        from: 499,
+      },
+      {
+        name: 'White & gold · 3 jars',
+        swatch: 'linear-gradient(135deg, #f6f1e8 0 55%, #c6a052 55% 100%)',
+        image: 'hampers/trunk-candles-white.jpg',
+        from: 599,
+      },
+      {
+        name: 'Blue mosaic · 4 jars',
+        swatch: 'linear-gradient(135deg, #2b3f8f 0 55%, #e8c86a 55% 100%)',
+        image: 'hampers/trunk-candles-blue.jpg',
+        from: 699,
+      },
+    ],
+  },
+  {
+    id: 'dry-fruit-trunk',
+    name: 'The Dry Fruit Trunk',
+    scale: '2–4 JARS · TRUNK BOX',
+    description:
+      'The same hinged trunk, filled instead with screw-top jars of kaju, badam, pista and kishmish — for the people on your list who would rather be fed than lit.',
+    contents: [
+      '2, 3 or 4 jars by trunk size',
+      'Kaju, badam, pista & kishmish',
+      'Lids papered to match the box',
+    ],
+    occasions: ['Diwali', 'Corporate gifting', 'Weddings', 'Client gifts'],
+    from: 499,
+    image: 'hampers/trunk-dryfruit-teal.jpg',
+    alt: 'Jars of dry fruit in a patterned trunk box with a brass handle',
+    variations: [
+      {
+        name: 'Teal floral · 2 jars',
+        swatch: 'linear-gradient(135deg, #1f6b6a 0 55%, #f2efe6 55% 100%)',
+        image: 'hampers/trunk-dryfruit-teal.jpg',
+        from: 499,
+      },
+      {
+        name: 'White & gold · 3 jars',
+        swatch: 'linear-gradient(135deg, #f6f1e8 0 55%, #c6a052 55% 100%)',
+        image: 'hampers/trunk-dryfruit-white.jpg',
+        from: 599,
+      },
+      {
+        name: 'Blue mosaic · 4 jars',
+        swatch: 'linear-gradient(135deg, #2b3f8f 0 55%, #e8c86a 55% 100%)',
+        image: 'hampers/trunk-dryfruit-blue.jpg',
+        from: 699,
+      },
+    ],
+  },
+  {
+    id: 'gold-basket',
+    name: 'The Gold Basket',
+    scale: 'BASKET · CANDLES & TREATS',
+    description:
+      'An open wire basket in antique gold, with two of our own rose-petal jars lit at the front and brownie, chocolate and net pouches of nuts behind them.',
+    contents: [
+      '2 jar candles',
+      'Net pouches of kaju & badam',
+      'Brownie and filled dark chocolate',
+      'Gold wire basket, yours to keep',
+    ],
+    occasions: ['Diwali', 'Weddings', 'Client gifts', 'Festive giveaways'],
+    from: 799,
+    image: 'hampers/gold-basket.jpg',
+    alt: 'Gold wire basket with two lit jar candles, chocolate and pouches of nuts',
   },
 ];
 
