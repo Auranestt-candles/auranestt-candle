@@ -1,4 +1,4 @@
-import { hamperNote, hampers } from '../data/hampers.js';
+import { customisationNote, hamperNote, hampers } from '../data/hampers.js';
 import { PRODUCT_IMAGE_PATH } from '../config.js';
 import { escapeHtml, qs, render } from '../lib/dom.js';
 import { formatPrice } from '../lib/format.js';
@@ -114,6 +114,7 @@ function cardTemplate(hamper) {
       <p>${escapeHtml(hamper.description)}</p>
 
       <ul class="hamper-contents">${contents}</ul>
+      <p class="hamper-customisable">${escapeHtml(customisationNote)}</p>
 
       ${variationPickerTemplate(hamper)}
       

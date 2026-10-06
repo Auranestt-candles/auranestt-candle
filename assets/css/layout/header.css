@@ -42,7 +42,7 @@
   .desktop-nav,.header-cta{display:none}
   .menu-toggle{display:block}
   .mobile-menu{
-    position:fixed;top:83px;left:0;right:0;z-index:49;background:var(--paper);
+    position:fixed;top:var(--drawer-top,83px);left:0;right:0;z-index:49;background:var(--paper);
     padding:12px 20px 22px;box-shadow:0 20px 35px rgba(0,0,0,.1)
   }
   .mobile-menu.open{display:grid}

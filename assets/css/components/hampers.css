@@ -90,6 +90,12 @@
 .hamper-contents li{
   position:relative;padding-left:17px;font-size:13px;line-height:1.4;color:var(--ink)
 }
+/* Sits apart from the contents because it is about the price, not about what
+   is in the box. Quieter than a bullet so it does not compete with them. */
+.hamper-customisable{
+  margin:-8px 0 18px;font-size:12px;line-height:1.5;font-style:italic;color:var(--muted);padding-bottom:10px
+}
+
 .hamper-contents li::before{
   content:'';position:absolute;left:0;top:6px;width:6px;height:6px;
   background:var(--rose);border-radius:50%
@@ -99,7 +105,7 @@
    contents so they never read as "this box is only for Diwali".
    margin-top:auto pushes the block, and the CTA under it, to the card's foot,
    keeping the CTAs aligned across a row of uneven cards. */
-.hamper-occasions{margin-top:auto;padding-top:20px}
+.hamper-occasions{margin-top:auto;padding-top:10px}
 .hamper-occasions b{
   display:block;font:500 10px var(--sans);letter-spacing:.14em;text-transform:uppercase;
   color:var(--muted);margin-bottom:9px
@@ -113,6 +119,7 @@
 /* The variation picker reuses `.colour-picker` from the product card, so only
    the spacing around it belongs here. */
 .hamper-card .colour-picker{margin-bottom:4px}
+.hamper-card .colour-picker legend{font-weight: bold; color:var(--wine)}
 
 .hamper-cta{
   display:block;border:0;border-top:1px solid var(--line);background:none;width:100%;

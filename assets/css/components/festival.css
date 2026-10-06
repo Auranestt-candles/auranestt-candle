@@ -1,0 +1,75 @@
+/* The seasonal push. Hidden until `components/festival.js` decides the window
+   is open, so the everyday page is what shows outside it. */
+
+.festival[hidden]{display:none}
+
+/* It sits above the hero while the window is open, so it is the first thing
+   seen. Shorter than a full section on purpose — tall enough to land, short
+   enough to leave the hero in view behind it. */
+.festival{
+  display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.15fr);gap:60px;align-items:center;
+  padding-block:clamp(38px,5vw,62px);
+  background:var(--wine);color:var(--footer-text)
+}
+
+.festival .section-kicker{color:var(--gold)}
+.festival h2{margin:14px 0 20px;color:var(--white)}
+/* The script phrase is wine-on-wine by default, so it takes the gold here. */
+.festival h2 em{color:var(--gold)}
+.festival .lead{color:var(--footer-muted);max-width:460px}
+
+.festival-deadline{
+  margin:20px 0 28px;padding-top:16px;border-top:1px solid rgba(255,244,238,.22);
+  font-size:14px;color:var(--footer-text)
+}
+.festival-deadline b{color:var(--gold);font-weight:600}
+
+/* A gold button: the dark button would vanish against the wine ground. */
+.btn-gold{background:var(--gold);color:#2b1a16}
+.btn-gold:hover{background:#c69a6e;transform:translateY(-2px)}
+
+/* minmax(0,…) rather than a bare fr: an fr track is minmax(auto,1fr), so its
+   minimum is the content's min-content and the thumbnails push the whole
+   section wider than the viewport. Capping the minimum at 0 lets it shrink. */
+
+/* Two-up rather than a row of four: at this column width four thumbnails
+   come out too small to show what is in the box. */
+.festival-picks{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px;align-items:start}
+
+.festival-pick{display:block;transition:.25s}
+.festival-pick:hover{transform:translateY(-4px)}
+.festival-pick-image{
+  display:block;overflow:hidden;background:rgba(255,244,238,.08);aspect-ratio:1/1
+}
+.festival-pick-image img{width:100%;height:100%;object-fit:cover;transition:.5s}
+.festival-pick:hover .festival-pick-image img{transform:scale(1.05)}
+.festival-pick b{
+  display:block;margin-top:10px;font:600 16px/1.2 var(--serif);color:var(--white)
+}
+.festival-pick-price{
+  display:block;margin-top:3px;font:700 11px var(--sans);letter-spacing:.08em;
+  color:var(--gold);font-variant-numeric:lining-nums tabular-nums
+}
+
+/* The announcement bar, while the window is open. */
+.announcement.is-festival{background:var(--wine-dark)}
+.announcement.is-festival a{display:inline-block;color:inherit}
+.announcement.is-festival a:hover{text-decoration:underline}
+
+@media(max-width:1050px){
+  .festival{gap:40px}
+}
+@media(max-width:800px){
+  .festival{grid-template-columns:minmax(0,1fr);gap:28px;padding-block:34px 38px}
+}
+@media(max-width:520px){
+  /* One swipeable row rather than a 2x2 block: stacked above the hero, the
+     grid version pushed the hero most of a screen down. */
+  .festival-picks{
+    grid-template-columns:none;grid-auto-flow:column;grid-auto-columns:47%;
+    gap:12px;overflow-x:auto;scroll-snap-type:x proximity;scrollbar-width:none
+  }
+  .festival-picks::-webkit-scrollbar{display:none}
+  .festival-pick{scroll-snap-align:start}
+  .festival-deadline{margin:16px 0 24px}
+}

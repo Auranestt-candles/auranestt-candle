@@ -35,7 +35,10 @@
  * @property {string} scale        Small label above the name — the size of the
  *                                 box, e.g. '9 BLOOM CANDLES · GIFT BOX'.
  * @property {string} description  One line of copy — what the box is like.
- * @property {string[]} contents   What is in the box, shortest first.
+ * @property {string[]} contents   What is in the box, shortest first. Physical
+ *                                 items only — anything about terms, service or
+ *                                 price belongs outside this list, or it stops
+ *                                 scanning as a list of contents.
  * @property {string[]} occasions  Where this box tends to be sent. Hints, not
  *                                 categories — any box suits any occasion.
  * @property {number} from         Starting price in rupees, for `FROM ₹…`. With
@@ -67,6 +70,7 @@ export const hampers = [
     from: 699,
     image: 'hampers/jar-quartet.jpg',
     alt: 'Four pastel jar candles with gold lids in a red rigid gift box',
+    banners: []
   },
   {
     id: 'greeting-box',
@@ -85,6 +89,7 @@ export const hampers = [
     from: 599,
     image: 'hampers/greeting-box.jpg',
     alt: 'Printed gift boxes with flower bowl candles and chocolates, in four lid colours',
+    banners: ['Diwali']
   },
   {
     id: 'bloom-box',
@@ -99,9 +104,10 @@ export const hampers = [
       'White rigid gift box',
     ],
     occasions: ['Weddings', 'Anniversaries', "Mother's Day", 'Housewarmings'],
-    from: 899,
+    from: 799,
     image: 'hampers/bloom-box-blush.jpg',
     alt: 'Nine sculpted bloom candles in a white compartment gift box',
+    banners: [],
     variations: [
       {
         name: 'Blush & ivory',
@@ -131,6 +137,7 @@ export const hampers = [
       'A bottled soft drink',
       'Gold box with a satin bow',
     ],
+    banners: ['Diwali'],
     occasions: ['Diwali', 'Corporate gifting', 'Client gifts', 'Festive giveaways'],
     from: 899,
     image: 'hampers/treat-box.jpg',
@@ -148,6 +155,7 @@ export const hampers = [
       'Multiple wicks on every tier',
       'Your choice of wax colours',
     ],
+    banners: ['Diwali'],
     occasions: ['Weddings', 'Anniversaries', 'Milestone events', 'Diwali'],
     from: 599,
     badge: 'Statement piece',
@@ -168,6 +176,7 @@ export const hampers = [
     id: 'keepsake-trunk',
     name: 'The Keepsake Trunk',
     scale: '2–4 JAR CANDLES · TRUNK BOX',
+    banners: [],
     description:
       'Jar candles in a hinged trunk with a brass handle and a satin bed, their lids papered to match the box. The candles burn down; the trunk gets kept and used.',
     contents: [
@@ -204,6 +213,7 @@ export const hampers = [
     id: 'dry-fruit-trunk',
     name: 'The Dry Fruit Trunk',
     scale: '2–4 JARS · TRUNK BOX',
+    banners: ['Diwali'],
     description:
       'The same hinged trunk, filled instead with screw-top jars of kaju, badam, pista and kishmish — for the people on your list who would rather be fed than lit.',
     contents: [
@@ -240,6 +250,7 @@ export const hampers = [
     id: 'gold-basket',
     name: 'The Gold Basket',
     scale: 'BASKET · CANDLES & TREATS',
+    banners: ['Diwali'],
     description:
       'An open wire basket in antique gold, with two of our own rose-petal jars lit at the front and brownie, chocolate and net pouches of nuts behind them.',
     contents: [
@@ -249,11 +260,21 @@ export const hampers = [
       'Gold wire basket, yours to keep',
     ],
     occasions: ['Diwali', 'Weddings', 'Client gifts', 'Festive giveaways'],
-    from: 799,
+    from: 749,
     image: 'hampers/gold-basket.jpg',
     alt: 'Gold wire basket with two lit jar candles, chocolate and pouches of nuts',
   },
 ];
+
+/**
+ * Shown on every hamper card, under the contents.
+ *
+ * It lives here as one string rather than as a bullet repeated in all eight
+ * `contents` arrays: it is true of every hamper, so copying it per hamper adds
+ * no information and dilutes the bullets that do differ. It is rendered apart
+ * from the contents because it describes the price, not what is in the box.
+ */
+export const customisationNote = 'Customisable — the price adjusts to what you change.';
 
 /** The closing note under the grid — build-your-own and bulk. */
 export const hamperNote = {

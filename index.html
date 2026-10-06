@@ -83,7 +83,7 @@
     </symbol>
   </svg>
 
-  <div class="announcement">Handmade with love in India <span>•</span> Order on WhatsApp, we reply personally</div>
+ <div class="announcement" data-announcement>Handmade with love in India <span>•</span> Order on WhatsApp, we reply personally</div>
 
   <header class="site-header" id="top">
     <a class="brand" href="#home" aria-label="Aura Nestt home">
@@ -104,6 +104,11 @@
   <nav class="mobile-menu" aria-label="Primary, mobile" aria-hidden="true" data-mobile-menu></nav>
 
   <main>
+    <!-- Seasonal push. Hidden until components/festival.js decides the
+         window in data/festival.js is open; see that file to move,
+         shorten or switch off the campaign. -->
+    <section class="festival section" id="festival" aria-label="Festival gifting" data-festival hidden></section>
+
     <section class="hero" id="home">
       <div class="hero-copy">
         <p class="eyebrow">HANDMADE WITH LOVE · CRAFTED FOR CALM</p>
@@ -216,7 +221,7 @@
       </div>
 
       <!-- Cards and the custom-hamper note are rendered from assets/js/data/hampers.js -->
-      <div class="hamper-grid" data-hamper-grid></div>
+      <div class="hamper-grid" data-hamper-grid id="hampers-grid"></div>
       <div data-hamper-note></div>
     </section>
 
