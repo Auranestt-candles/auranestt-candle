@@ -69,7 +69,7 @@ export const products = [
     categories: ['floral', 'gifting'],
     image: 'rose-bloom/pink.jpg',
     alt: 'Rose Bloom candles',
-    packs: [{ size: 2, price: 125 }, { size: 4, price: 215 }],
+    packs: [{ size: 2, price: 125 }, { size: 4, price: 249 }],
     colours: [
       { name: 'Pink', hex: SWATCH.pink, image: 'rose-bloom/pink.jpg' },
       { name: 'Red', hex: SWATCH.red, image: 'rose-bloom/red.jpg' },
@@ -91,7 +91,7 @@ export const products = [
     categories: ['floral', 'gifting'],
     image: 'peony-rose/pink.jpg',
     alt: 'Peony Rose candle',
-    packs: [{ size: 2, price: 175 }, { size: 4, price: 315 }],
+    packs: [{ size: 2, price: 189 }, { size: 4, price: 389 }],
     colours: [
       { name: 'Pink', hex: SWATCH.pink, image: 'peony-rose/pink.jpg' },
       { name: 'Red', hex: SWATCH.red, image: 'peony-rose/red.jpg' },
@@ -114,7 +114,7 @@ export const products = [
     categories: ['floral', 'pillar', 'gifting'],
     image: 'lotus-bloom/pink.jpg',
     alt: 'Lotus Bloom candle',
-    packs: [{ size: 2, price: 190 }, { size: 4, price: 330 }],
+    packs: [{ size: 2, price: 199 }, { size: 4, price: 399 }],
     colours: [
       { name: 'Pink', hex: SWATCH.pink, image: 'lotus-bloom/pink.jpg' },
       { name: 'Red', hex: SWATCH.red, image: 'lotus-bloom/red.jpg' },
@@ -137,7 +137,7 @@ export const products = [
     categories: ['pillar', 'gifting'],
     image: 'bubble-cube/pink.jpg',
     alt: 'Bubble Cube candles',
-    packs: [{ size: 4, price: 155 }, { size: 6, price: 215 }],
+    packs: [{ size: 4, price: 179 }, { size: 6, price: 259 }],
     colours: [
       { name: 'Pink', hex: SWATCH.pink, image: 'bubble-cube/pink.jpg' },
       { name: 'Red', hex: SWATCH.red, image: 'bubble-cube/red.jpg' },
@@ -159,7 +159,7 @@ export const products = [
     categories: [],
     image: 'moon-face/white.jpg',
     alt: 'Moon Face candles',
-    packs: [{ size: 2, price: 125 }, { size: 4, price: 215 }],
+    packs: [{ size: 2, price: 125 }, { size: 4, price: 249 }],
     colours: [
       { name: 'White', hex: SWATCH.white, image: 'moon-face/white.jpg' },
       { name: 'Pink', hex: SWATCH.pink, image: 'moon-face/pink.jpg' },
@@ -180,7 +180,7 @@ export const products = [
     categories: ['pillar', 'gifting'],
     image: 'teddy-bear/brown.jpg',
     alt: 'Teddy Bear candles',
-    packs: [{ size: 2, price: 125 }, { size: 4, price: 215 }],
+    packs: [{ size: 2, price: 125 }, { size: 4, price: 249 }],
     colours: [
       { name: 'Brown', hex: SWATCH.brown, image: 'teddy-bear/brown.jpg' },
       { name: 'Pink', hex: SWATCH.pink, image: 'teddy-bear/pink.jpg' },
@@ -203,7 +203,7 @@ export const products = [
     categories: ['pillar', 'gifting'],
     image: 'evil-eye/blue.jpg',
     alt: 'Evil Eye candles',
-    packs: [{ size: 2, price: 205 }, { size: 3, price: 290 }, { size: 4, price: 375 }],
+    packs: [{ size: 2, price: 249 }, { size: 3, price: 389 }, { size: 4, price: 499 }],
     colours: [
       { name: 'Blue', hex: SWATCH.blue, image: 'evil-eye/blue.jpg' },
       { name: 'Pink', hex: SWATCH.pink, image: 'evil-eye/pink.jpg' },
@@ -223,7 +223,7 @@ export const products = [
     categories: ['floral', 'pillar', 'gifting'],
     image: 'heart-in-bloom/pink.jpg',
     alt: 'Heart in Bloom scented candle',
-    packs: [{ size: 2, price: 250 }, { size: 3, price: 360 }],
+    packs: [{ size: 2, price: 269 }, { size: 3, price: 399 }],
     colours: [
       { name: 'Pink', hex: SWATCH.pink, image: 'heart-in-bloom/pink.jpg' },
       { name: 'Orange', hex: SWATCH.orange, image: 'heart-in-bloom/orange.jpg' },
@@ -245,7 +245,7 @@ export const products = [
     categories: ['pillar', 'gifting'],
     image: 'spiral-wave-pillar/red.jpg',
     alt: 'Spiral Wave Pillar candle',
-    packs: [{ size: 2, price: 309 }, { size: 3, price: 449 }, { size: 4, price: 599 }],
+    packs: [{ size: 2, price: 249 }, { size: 3, price: 389 }, { size: 4, price: 499 }],
     colours: [
       { name: 'Red', hex: SWATCH.red, image: 'spiral-wave-pillar/red.jpg' },
       { name: 'Pink', hex: SWATCH.pink, image: 'spiral-wave-pillar/pink.jpg' },
